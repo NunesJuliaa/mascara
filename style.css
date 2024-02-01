@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Cedarville+Cursive&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Cedarville Cursive', cursive;
+}
+body {
+  color: rgb(247, 255, 140);
+  background: rgb(78, 138, 249);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content:center ;
+  min-height:100vh;
+}
+.heading {
+  width: 80%;
+  font-size: 22px;
+  letter-spacing: 10px;
+  font-family: cursive;
+}
+#camera {
+  border: 2px dashed rgb(236, 255, 143);
+  width: 350px;
+  height: 300px;
+}
+.nameOfObjects,
+#resultObjectName,
+#resultObjectAccuracy {
+  color: rgb(250, 244, 126);
+}
+.julia{
+  position: absolute;
+  border: none;
+  color: rgb(255, 255, 255);
+  width: 15em;
+  height: 3em;
+  line-height:2em ;
+  text-align: center;
+  background:linear-gradient(90deg,rgb(255, 255, 120),rgb(247, 159, 174),rgb(0, 0, 255),rgb(187, 0, 255)) ;
+  background-size:300% ;
+  border-radius: 30px;
+  text-transform: uppercase;
+  cursor: pointer;
+  z-index: 1;
+  margin-left: -100px;
+}
+.julia:hover{
+  animation: animation 8s linear infinite ;
+  border: none;
+}
+@keyframes animation{
+  0%{background-position: 0%;}
+  100%{background-position: 400%;}
+}
+.julia::before{
+  content:"";
+  position: absolute;
+  top: -5px;
+  left: -5px;
+  right: -5px;
+  bottom: -5px;
+  z-index: -1;
+  background:linear-gradient(90deg,rgb(255, 255, 48),rgb(255, 86, 115),rgb(2, 2, 139),rgb(92, 3, 124)) ;
+  background-size: 400%;
+  border-radius: 35px;
+  transition: 1s;
+
+}
+.julia:hover::before{
+  filter: blur(20px);
+}
+
+.gabi{
+position: relative;
+background: transparent;
+color: rgb(119, 0, 255);
+text-decoration: none;
+transform: uppercase;
+border: none;
+letter-spacing: 0.1rem;
+font-size: 2rem;
+padding:1rem 3rem ;
+transition: 0.2s;
+}
+.gabi:hover{
+  letter-spacing: 0.2rem;
+  padding:1.1rem 3.1rem ;
+  background:transparent;
+  color: var(--cir);
+  animation: box 3s infinite;
+}
+.gabi::before{
+  content: "";
+  position: absolute;
+  inset: 2px;
+  background: transparent;
+}
+.gabi span{
+  position: relative;
+  z-index: 1;
+}
+.gabi i{
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+.gabi i::before{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 80%;
+  top: -2px;
+  border: 2px solid var(--cir);
+  background: transparent;
+  transition: 0.2s;
+}
+.gabi:hover i::before{
+  width: 15px;
+  left: 20%;
+  animation: move 3s infinite;
+}
+.gabi i::after{
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 2px;
+  left: 20%;
+  bottom: -2px;
+  border: 2px solid var(--cir);
+  background: transparent;
+  transition:0.2s ;
+}
+.gabi:hover i::after{
+  width: 15px;
+  left: 80%;
+  animation: move 3s infinite;
+}
+@keyframes move {
+  0%{
+    transform: translateX(0);
+  }
+  50%{
+    transform: translateX(5px);
+  }
+  100%{
+    transform: translateX(0);
+  }
+}
+@keyframes box{
+  0%{
+    box-shadow: #27272c;
+  }
+  50%{
+    box-shadow: 0 0 25px var(--cir);
+  }
+  100%{
+    box-shadow: #27272c;
+  }
+}
